@@ -1,4 +1,5 @@
 import './App.css';
+import Tarjeta from "./components/Tarjeta"
 
 const productos = [
   {
@@ -410,13 +411,47 @@ const producto =   {
   "condition": "new",
   "free_shipping": true,
   "thumbnail": "http://mla-s1-p.mlstatic.com/909111-MLA31239994076_062019-I.jpg",
+  "discount": 0,
+}
+
+const producto2 = {
+    "id": "MLA807148555",
+    "title": "Motorola G6 32 Gb Índigo Oscuro 3 Gb Ram",
+    "price": 10999,
+    "condition": "used",
+    "free_shipping": false,
+    "thumbnail": "http://mla-s2-p.mlstatic.com/632562-MLA31003470563_062019-I.jpg",
+    "discount": 8
 }
 
 const App = () => {
+
+
   return (
     <div>
 
-    Hola!
+     <h1>Hola</h1>
+
+     <Tarjeta 
+        title={producto.title}
+        price={producto.price}
+        thumbnail={producto.thumbnail}
+        shipping={producto.free_shipping}
+        condition={producto.condition}
+        color="card-primary"
+        discount={producto.discount}
+
+     />
+
+      <Tarjeta 
+        title={producto2.title}
+        price={producto2.price}
+        thumbnail={producto2.thumbnail}
+        shipping={producto2.free_shipping}
+        condition={producto2.condition}
+        color="card-secondary"
+        discount={producto2.discount}
+     />
     </div>
   );
 }
